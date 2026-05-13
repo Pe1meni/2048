@@ -1,2 +1,2 @@
-# Continuum
-continuum hypothesis, statement of set theory that the set of real numbers (the continuum) is in a sense as small as it can be.
+# 2048 Game
+A game where you have to reach 2048 before the board fills up.
