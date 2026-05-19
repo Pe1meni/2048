@@ -117,6 +117,7 @@ void PlayingField::moveS() {
 				}
 				else if (field[i + counter + 1][j] == field[i][j] && assocField[i + counter + 1][j] == 0) {
 					moveField[i][j] = counter + 1;
+					score += field[i][j] * 2;
 					field[i + counter + 1][j] = field[i][j] * 2;
 					assocField[i + counter + 1][j] = 1;
 					field[i][j] = 0;
@@ -160,6 +161,7 @@ void PlayingField::moveW() {
 				}
 				else if (field[i - counter - 1][j] == field[i][j] && assocField[i - counter - 1][j] == 0) {
 					moveField[i][j] = counter + 1;
+					score += field[i][j] * 2;
 					field[i - counter - 1][j] = field[i][j] * 2;
 					assocField[i - counter - 1][j] = 1;
 					field[i][j] = 0;
@@ -203,6 +205,7 @@ void PlayingField::moveD() {
 				}
 				else if (field[i][j + counter + 1] == field[i][j] && assocField[i][j + counter + 1] == 0) {
 					moveField[i][j] = counter + 1;
+					score += field[i][j] * 2;
 					field[i][j + counter + 1] = field[i][j] * 2;
 					assocField[i][j + counter + 1] = 1;
 					field[i][j] = 0;
@@ -246,6 +249,7 @@ void PlayingField::moveA() {
 				}
 				else if (field[i][j - counter - 1] == field[i][j] && assocField[i][j - counter - 1] == 0) {
 					moveField[i][j] = counter + 1;
+					score += field[i][j] * 2;
 					field[i][j - counter - 1] = field[i][j] * 2;
 					assocField[i][j - counter - 1] = 1;
 					field[i][j] = 0;
@@ -272,4 +276,8 @@ bool PlayingField::find2048() {
 		}
 	}
 	return false;
+}
+
+int PlayingField::getScore() {
+	return score;
 }
